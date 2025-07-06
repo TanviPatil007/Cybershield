@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="This website identifies the safety of URLs.">
     <meta name="keywords" content="phishing url, cyber security, machine learning, url detector">
-    <meta name="author" content="VAIBHAV BICHAVE">
+    <meta name="author" content="Tukaram">
 
     <title>Phishing Website Detector</title>
 
@@ -23,9 +24,10 @@
     <header>
         <nav>
             <ul>
-                <li><img src="{{ url_for('static', filename='image/Blue_White_Simple_Cyber_Security_Logo-removebg-preview.png') }}" alt="logo"></li>
+                <li><img src="{{ url_for('static', filename='image/Blue_White_Simple_Cyber_Security_Logo-removebg-preview.png') }}"
+                        alt="logo"></li>
                 <li class="left-nav"><a href="/">Home</a></li>
-                <li class="right-nav"><a href="contact.html">Contact Us</a></li>
+                <li class="right-nav"><a href="about.html">About</a></li>
                 <li class="FAQ"><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
@@ -51,8 +53,10 @@
             <td class="text-center py-4">
                 <h6><a href="{{ url }}" target="_blank">{{ url }}</a></h6>
                 <h3 id="prediction"></h3>
-                <button class="button1 mt-2" id="button1" style="display: none;" onclick="window.open('{{ url }}')">Continue</button>
-                <button class="button2 mt-2" id="button2" style="display: none;" onclick="window.open('{{ url }}')">Still want to Continue</button>
+                <button class="button1 mt-2" id="button1" style="display: none;"
+                    onclick="window.open('{{ url }}')">Continue</button>
+                <button class="button2 mt-2" id="button2" style="display: none;"
+                    onclick="window.open('{{ url }}')">Still want to Continue</button>
             </td>
         </tr>
         {% endif %}
@@ -72,11 +76,12 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="{{ url_for('static', filename='image/Blue_White_Simple_Cyber_Security_Logo-removebg-preview.png') }}" alt="logo">
+                <img src="{{ url_for('static', filename='image/Blue_White_Simple_Cyber_Security_Logo-removebg-preview.png') }}"
+                    alt="logo">
             </div>
             <div class="footer-links">
                 <a href="/">Home</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="about.html">About</a>
                 <a href="faq.html">FAQ</a>
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -97,7 +102,7 @@
         let x = {{ xx }};
         let percentage = (x * 100).toFixed(2);
         const prediction = document.getElementById("prediction");
-        if (x >= 0.5) {
+        if (x >= 0.7) {
             prediction.innerHTML = `<span style="color: limegreen; font-weight: bold;">This is a legitimate website</span><br>Website is ${percentage}% safe to use...`;
             document.getElementById("button1").style.display = "inline-block";
         } else {
@@ -105,7 +110,7 @@
             document.getElementById("button2").style.display = "inline-block";
         }
     </script>
-{% endif %}
+    {% endif %}
 
 
     <!-- JS Libraries -->
@@ -119,4 +124,5 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
